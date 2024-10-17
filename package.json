@@ -6,8 +6,7 @@
   "type": "module",
   "node": "current",
   "scripts": {
-    "start": "node server.js",
-    "dev": "nodemon server.js"
+    "start": "node server.js"
   },
   "author": "Girish Digge",
   "license": "ISC",
