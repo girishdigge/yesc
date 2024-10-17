@@ -1,0 +1,1 @@
+import{j as s}from"./index-Bba1K-8O.js";import{S as e}from"./scroll-area-DoiHdfpm.js";function x({children:a,scrollable:r=!1}){return s.jsx(s.Fragment,{children:r?s.jsx(e,{className:"h-[calc(100dvh-52px)]",children:s.jsx("div",{className:"h-full  p-4 md:px-8",children:a})}):s.jsx("div",{className:"h-full  p-4 md:px-8",children:a})})}export{x as P};
