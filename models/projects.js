@@ -81,23 +81,9 @@ const Project = sequelize.define(
     },
     Future_Expantion: {
       type: DataTypes.STRING,
-      allowNull: false,
     },
     No_of_Floors: {
       type: DataTypes.STRING,
-      allowNull: false,
-    },
-    Tie_Level: {
-      type: DataTypes.BOOLEAN,
-      defaultValue: false,
-    },
-    Terrace_Floor: {
-      type: DataTypes.BOOLEAN,
-      defaultValue: false,
-    },
-    Staircase_Cap: {
-      type: DataTypes.BOOLEAN,
-      defaultValue: false,
     },
     Remarks: {
       type: DataTypes.STRING,
@@ -195,6 +181,11 @@ const Project = sequelize.define(
         len: { args: [10, 15], msg: 'Enter a valid phone number' },
       },
     },
+    buildingStructure: {
+      type: DataTypes.JSON, // Correct usage of JSON data type
+      defaultValue: [], // Default value as an empty array
+    },
+
     Activity: {
       type: DataTypes.JSON, // Correct usage of JSON data type
       defaultValue: [], // Default value as an empty array

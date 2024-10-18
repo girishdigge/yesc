@@ -98,6 +98,8 @@ export const getProjectById = asyncHandler(async (req, res) => {
 
 // Create a new project
 export const createProject = asyncHandler(async (req, res) => {
+  console.log('data:', req.body.buildingStructure[0]);
+
   const {
     ArchitectName,
     EngineerName,
@@ -119,9 +121,6 @@ export const createProject = asyncHandler(async (req, res) => {
     Septic_Tank_Capacity,
     Future_Expantion,
     No_of_Floors,
-    Tie_Level,
-    Terrace_Floor,
-    Staircase_Cap,
     Remarks,
     Inhouse_Engineer,
     Client,
@@ -159,7 +158,12 @@ export const createProject = asyncHandler(async (req, res) => {
   // const Activity = initialProjectConfig(req.body);
   //  Optional: You can add additional validation logic for complex fields like SBC_File or tank capacities
   // console.log(Activity);
-  const Activity = [Building_Status];
+  const buildingStructure = [
+    { id: 0, name: 'Not Started', order: 0 },
+    ...req.body.buildingStructure,
+  ];
+  const Activity = [buildingStructure[0].name];
+
   // Create the project entry in the database
   const project = await Project.create({
     ArchitectName,
@@ -182,9 +186,6 @@ export const createProject = asyncHandler(async (req, res) => {
     Septic_Tank_Capacity,
     Future_Expantion,
     No_of_Floors,
-    Tie_Level,
-    Terrace_Floor,
-    Staircase_Cap,
     Remarks,
     Inhouse_Engineer,
     Client,
@@ -205,6 +206,7 @@ export const createProject = asyncHandler(async (req, res) => {
     Owner_Email,
     Owner_Phone1,
     Owner_Phone2,
+    buildingStructure,
     Activity,
   });
 
@@ -244,9 +246,7 @@ export const updateProject = asyncHandler(async (req, res) => {
     Septic_Tank_Capacity,
     Future_Expantion,
     No_of_Floors,
-    Tie_Level,
-    Terrace_Floor,
-    Staircase_Cap,
+
     Remarks,
     Inhouse_Engineer,
     Client,
@@ -313,9 +313,7 @@ export const updateProject = asyncHandler(async (req, res) => {
     Septic_Tank_Capacity,
     Future_Expantion,
     No_of_Floors,
-    Tie_Level,
-    Terrace_Floor,
-    Staircase_Cap,
+
     Remarks,
     Inhouse_Engineer,
     Client,
