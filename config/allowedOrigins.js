@@ -4,8 +4,7 @@ import os from 'os';
 export const allowedOrigin = [
   'http://localhost:3000',
   'http://localhost:5173',
-  'https://yesc.vercel.app/',
-  'https://yesc-girishs-projects-dc664c35.vercel.app/',
+
   // 'http://16.171.13.100', // Example of an IP (can be removed if not needed)
 ];
 
