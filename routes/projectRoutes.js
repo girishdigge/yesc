@@ -10,6 +10,7 @@ import {
   getAllTodoProjects,
   projectActivity,
   getTotalProjectsCount,
+  updateProjectForm,
 } from '../controllers/projectsController.js';
 import verifyJWT from '../middleware/verifyJWT.js';
 const router = express.Router();
@@ -22,6 +23,7 @@ router.delete('/delete', deleteProject);
 router.get('/', getAllProjects);
 router.post('/projectActivity', projectActivity);
 router.post('/', createProject);
+router.patch('/update', updateProjectForm);
 router.patch('/', updateProject);
 
 export default router;

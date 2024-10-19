@@ -1,0 +1,1 @@
+import{a as t}from"./todoAPI-C5CE0O1H.js";import{u as a}from"./data-table-skeleton-CuYFPzGc.js";const u=localStorage.getItem("username")||"",m=localStorage.getItem("role")||"",c=(e,o,r,s)=>a({queryKey:["todos",e,o,r],queryFn:async()=>t(e,o,r,u,m,"",s)});export{c as u};

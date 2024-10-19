@@ -1,7 +1,9 @@
 import Project from '../models/projects.js'; // Assuming you have a Project model
 import asyncHandler from 'express-async-handler';
 import { Op } from 'sequelize';
-
+import { deleteFile } from '../utils/deleteFile.js';
+import path from 'path';
+const __dirname = path.resolve();
 // Get all projects with pagination and optional filters
 export const getAllProjects = asyncHandler(async (req, res) => {
   // Get offset and limit from query parameters with defaults
@@ -108,7 +110,6 @@ export const createProject = asyncHandler(async (req, res) => {
     FirmName,
     ContactDetails,
 
-    // SBC_File,
     SBC_Number,
     Overhead_Tank,
     Underground_Tank,
@@ -143,6 +144,12 @@ export const createProject = asyncHandler(async (req, res) => {
     Owner_Phone2,
   } = req.body;
 
+  let buildingStructure = JSON.parse(req.body.buildingStructure);
+
+  let SBC_File = '';
+  if (req.file) {
+    SBC_File = req.file.filename;
+  }
   // Validate mandatory fields
   if (
     !Project_Name ||
@@ -158,11 +165,12 @@ export const createProject = asyncHandler(async (req, res) => {
   // const Activity = initialProjectConfig(req.body);
   //  Optional: You can add additional validation logic for complex fields like SBC_File or tank capacities
   // console.log(Activity);
-  const buildingStructure = [
+  buildingStructure = [
     { id: 0, name: 'Not Started', order: 0 },
-    ...req.body.buildingStructure,
+    ...buildingStructure,
   ];
   const Activity = [buildingStructure[0].name];
+  console.log(buildingStructure);
 
   // Create the project entry in the database
   const project = await Project.create({
@@ -173,7 +181,7 @@ export const createProject = asyncHandler(async (req, res) => {
     FirmName,
     ContactDetails,
 
-    // SBC_File,
+    SBC_File,
     SBC_Number,
     Overhead_Tank,
     Septic_Tank,
@@ -301,6 +309,133 @@ export const updateProject = asyncHandler(async (req, res) => {
     FirmName,
     ContactDetails,
     // SBC_File,
+    SBC_Number,
+    Overhead_Tank,
+    Underground_Tank,
+    Septic_Tank,
+    Overhead_Tank_Position,
+    Overhead_Tank_Capacity,
+    Underground_Tank_Position,
+    Underground_Tank_Capacity,
+    Septic_Tank_Position,
+    Septic_Tank_Capacity,
+    Future_Expantion,
+    No_of_Floors,
+
+    Remarks,
+    Inhouse_Engineer,
+    Client,
+    Project_Name,
+    Project_Job_Number,
+    Assigned_Date,
+    Project_Address,
+    Project_Job_Category,
+    Project_Job_Type,
+    Project_Status,
+    Building_Status,
+    Completed_Floors,
+    Site_Person_Name,
+    Site_Email,
+    Site_Phone1,
+    Site_Phone2,
+    Owner_Name,
+    Owner_Email,
+    Owner_Phone1,
+    Owner_Phone2,
+    Activity,
+  });
+
+  // Return a success message and the updated project
+  res.json({
+    message: `Project ${Project_Name} updated successfully`,
+    updatedProject,
+  });
+});
+export const updateProjectForm = asyncHandler(async (req, res) => {
+  const {
+    id,
+    ArchitectName,
+    EngineerName,
+    ArEmail,
+    ErEmail,
+    FirmName,
+    ContactDetails,
+
+    SBC_Number,
+    Overhead_Tank,
+    Underground_Tank,
+    Septic_Tank,
+    Overhead_Tank_Position,
+    Overhead_Tank_Capacity,
+    Underground_Tank_Position,
+    Underground_Tank_Capacity,
+    Septic_Tank_Position,
+    Septic_Tank_Capacity,
+    Future_Expantion,
+    No_of_Floors,
+
+    Remarks,
+    Inhouse_Engineer,
+    Client,
+    Project_Name,
+    Project_Job_Number,
+    Assigned_Date,
+    Project_Address,
+    Project_Job_Category,
+    Project_Job_Type,
+    Project_Status,
+    Building_Status,
+    Completed_Floors,
+    Site_Person_Name,
+    Site_Email,
+    Site_Phone1,
+    Site_Phone2,
+    Owner_Name,
+    Owner_Email,
+    Owner_Phone1,
+    Owner_Phone2,
+    Activity,
+  } = req.body;
+  console.log(req.body);
+
+  // Find the project by ID
+  const project = await Project.findByPk(id);
+  // If the project is not found
+  if (!project) {
+    return res.status(404).json({ message: 'Project not found' });
+  }
+
+  let SBC_File = project.SBC_File;
+
+  if (req.file) {
+    deleteFile(path.join(__dirname, 'uploads', SBC_File));
+    SBC_File = req.file.filename;
+  }
+  console.log(SBC_File);
+
+  // Check if the project ID and required fields are provided
+  if (
+    !id ||
+    !Project_Name ||
+    !Project_Job_Number ||
+    !Project_Job_Category ||
+    !Project_Job_Type ||
+    !Project_Status
+  ) {
+    return res
+      .status(400)
+      .json({ message: 'All mandatory fields are required' });
+  }
+
+  // Update the project with the new data
+  const updatedProject = await project.update({
+    ArchitectName,
+    EngineerName,
+    ArEmail,
+    ErEmail,
+    FirmName,
+    ContactDetails,
+    SBC_File,
     SBC_Number,
     Overhead_Tank,
     Underground_Tank,
