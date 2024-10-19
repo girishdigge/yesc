@@ -2,7 +2,7 @@
   "name": "backend",
   "version": "1.0.0",
   "description": "yash sale engineers and contractors",
-  "main": "server.js",
+  "main": "app.js",
   "type": "module",
   "node": "current",
   "engines": {
@@ -10,7 +10,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node app.js"
   },
   "author": "Girish Digge",
   "license": "ISC",
