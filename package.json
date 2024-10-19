@@ -5,9 +5,12 @@
   "main": "server.js",
   "type": "module",
   "node": "current",
+  "engines": {
+    "node": "14.x"
+  },
   "scripts": {
-    "start": "node server.js",
-    "dev": "node server.js"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "author": "Girish Digge",
   "license": "ISC",
