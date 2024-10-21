@@ -1,0 +1,1 @@
+import{j as t}from"./index-BirjyYCK.js";function i({title:e,description:r,className:s}){return t.jsxs("div",{className:s,children:[t.jsx("h2",{className:"text-xl font-bold tracking-tight text-primary sm:text-3xl",children:e}),t.jsx("p",{className:"text-sm text-muted-foreground",children:r})]})}export{i as H};
