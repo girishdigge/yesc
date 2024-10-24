@@ -1,8 +1,4 @@
-<<<<<<<< HEAD:public/dist/assets/index-B31FxCdS.js
 import{r as m,aO as z}from"./index-DIcS40jd.js";import{p as P}from"./index-Bf-Kdcdl.js";var I={},F={exports:{}};/*!
-========
-import{r as m,ap as z}from"./index-BirjyYCK.js";import{p as P}from"./index-3rxzBus4.js";var I={},F={exports:{}};/*!
->>>>>>>> 982dceb4fd23975d7be703960402f45a6b28f392:public/dist/assets/index-B9bxeQ9e.js
 	Copyright (c) 2018 Jed Watson.
 	Licensed under the MIT License (MIT), see
 	http://jedwatson.github.io/classnames

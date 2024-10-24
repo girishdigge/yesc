@@ -1,8 +1,4 @@
-<<<<<<<< HEAD:public/dist/assets/theme-toggle-GTZQfVlI.js
 import{j as r,$ as C,r as c,c as p,_ as k,M as z,N as g,i as m,O as A,B as L}from"./index-DIcS40jd.js";import{c as e}from"./index-D3WTB7gC.js";import{C as j}from"./chevron-left-ZwcPHqCb.js";import{C as S,P as T,B as R,D as q,a as I,b as _,f as y}from"./dropdown-menu-Bdmw9SBL.js";import{T as N}from"./auth-BlBgYvq9.js";import{C as H}from"./circle-check-ApoYki5R.js";/**
-========
-import{j as r,$ as C,r as c,c as p,_ as k,p as z,q as g,i as m,s as A,B as L}from"./index-BirjyYCK.js";import{c as e}from"./index-j3Cmd6QT.js";import{C as j}from"./chevron-left-NGMl8fvv.js";import{C as S,P as T,B as q,D as R,a as I,b as _,f as y}from"./dropdown-menu-CXTQN6EL.js";import{T as H}from"./auth-fuJk9yB2.js";import{C as N}from"./circle-check-CERjRcNV.js";/**
->>>>>>>> 982dceb4fd23975d7be703960402f45a6b28f392:public/dist/assets/theme-toggle-CQ_bH4xB.js
  * @license lucide-react v0.358.0 - ISC
  *
  * This source code is licensed under the ISC license.
