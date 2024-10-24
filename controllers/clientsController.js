@@ -73,25 +73,17 @@ export const getClientById = asyncHandler(async (req, res) => {
   res.json({ client });
 });
 export const createClient = asyncHandler(async (req, res) => {
-  const {
-    first_name,
-    middle_name,
-    last_name,
-    email,
-    phone,
-    firm,
-    location,
-    remarks,
-  } = req.body;
+  let middle_name = req.body.middle_name;
+  const { first_name, last_name, email, phone, firm, location, remarks } =
+    req.body;
   if (!first_name || !last_name) {
     return res.status(400).json({ message: 'All fields are mandetory' });
   }
-  // const duplicate = await Client.findOne({
-  //   where: { clientname: clientname },
-  // });
-  // if (duplicate) {
-  //   return res.status(409).json({ message: 'Duplicate Clientname' });
-  // }
+
+  if (!middle_name) {
+    middle_name = '';
+  }
+  console.log(middle_name);
 
   const client = await Client.create({
     first_name,

@@ -18,14 +18,15 @@ import { logger } from './middleware/logger.js';
 import { errorHandler } from './middleware/errorHandler.js';
 import cookieParser from 'cookie-parser';
 import cors from 'cors';
-import { corsOptions } from './config/corsOptions.js';
+// import { corsOptions } from './config/corsOptions.js';
 
 dotenv.config();
 const PORT = process.env.PORT || 3000;
 const __dirname = path.resolve();
 console.log(process.env.NODE_ENV);
 app.use(logger);
-app.use(cors(corsOptions));
+// app.use(cors(corsOptions));
+app.use(cors());
 app.use(express.json());
 app.use(cookieParser());
 
