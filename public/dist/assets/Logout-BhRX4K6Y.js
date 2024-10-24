@@ -1,0 +1,1 @@
+import{j as o}from"./index-BirjyYCK.js";import t from"./index-C7UdmWWp.js";import"./api-BsWGTiFV.js";import"./index-VWaDGczM.js";const a=()=>(localStorage.removeItem("accessToken"),o.jsx(t,{}));export{a as default};

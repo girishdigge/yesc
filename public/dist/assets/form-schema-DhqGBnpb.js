@@ -1,4 +1,8 @@
+<<<<<<<< HEAD:public/dist/assets/form-schema-DhqGBnpb.js
 import{r as c,c as T,_ as f,j as h,i as k,a0 as g,a1 as e,a9 as $,aa as P,ab as d,ac as i}from"./index-DIcS40jd.js";const p="horizontal",v=["horizontal","vertical"],l=c.forwardRef((a,o)=>{const{decorative:t,orientation:n=p,...r}=a,s=_(n)?n:p,m=t?{role:"none"}:{"aria-orientation":s==="vertical"?s:void 0,role:"separator"};return c.createElement(T.div,f({"data-orientation":s},m,r,{ref:o}))});l.propTypes={orientation(a,o,t){const n=a[o],r=String(n);return n&&!_(n)?new Error(O(r,t)):null}};function O(a,o){return`Invalid prop \`orientation\` of value \`${a}\` supplied to \`${o}\`, expected one of:
+========
+import{r as c,c as T,_ as f,j as h,i as k,E as g,G as e,Q as $,S as P,T as d,Z as i}from"./index-BirjyYCK.js";const p="horizontal",S=["horizontal","vertical"],l=c.forwardRef((a,o)=>{const{decorative:t,orientation:n=p,...r}=a,s=_(n)?n:p,m=t?{role:"none"}:{"aria-orientation":s==="vertical"?s:void 0,role:"separator"};return c.createElement(T.div,f({"data-orientation":s},m,r,{ref:o}))});l.propTypes={orientation(a,o,t){const n=a[o],r=String(n);return n&&!_(n)?new Error(v(r,t)):null}};function v(a,o){return`Invalid prop \`orientation\` of value \`${a}\` supplied to \`${o}\`, expected one of:
+>>>>>>>> 982dceb4fd23975d7be703960402f45a6b28f392:public/dist/assets/form-schema-DFPnFfcj.js
   - horizontal
   - vertical
 
